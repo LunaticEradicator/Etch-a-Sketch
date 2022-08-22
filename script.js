@@ -1,43 +1,47 @@
-const main = document.querySelector("div");
-const body = document.querySelector("body");
+const content = document.querySelector(".content");
+const button1 = document.querySelector(".button1");
+const button2 = document.querySelector(".button2");
+const button3 = document.querySelector(".button3");
+const button4 = document.querySelector(".button4");
 
-let rowSize = 15;
-let columnSize = 15;
+let rowSize = 100;
+let columnSize = 100;
 
 
 function row() {
     for (let j = 0; j < rowSize; j++) {
         singleRow = document.createElement("div");
         singleRow.classList.add("classOfEachRow");
-        main.append(singleRow);
+        content.append(singleRow);
     }
 }
 
 function column() {
     for (let j = 0; j < columnSize; j++) {
         const br = document.createElement("br");
-        main.append(br);
         row();
+        content.append(br);
     }
 }
 
 function checkUserInput() {
-    if (rowSize === 15 || columnSize === 15) {
+    if (rowSize !== 100 && columnSize !== 100) {
+        rowSize = prompt(` Enter the Grid ROW value Below "100" `);
+        while (rowSize === "") {
+            rowSize = prompt("Enter Row Grid Again (Below 100)");
+        }
+        columnSize = prompt(` Enter the Grid COLUMN value Below "100" `);
+
+        while (columnSize === "") {
+            columnSize = prompt("Enter Column Grid Again (Below 100)");
+        }
         column();
     }
     else {
-        rowSize = prompt(` Enter the Grid ROW value Below "37" `);
-        while (rowSize === "" || rowSize > 36) {
-            rowSize = prompt("Enter Row Grid Again (Below 37)");
-        }
-        columnSize = prompt(` Enter the Grid COLUMN value Below "17" `);
-
-        while (columnSize === "" || columnSize > 16) {
-            columnSize = prompt("Enter Column Grid Again (Below 17)");
-        }
         column();
     }
 }
+
 
 function hover() {
     let grid = document.querySelectorAll(".classOfEachRow");
@@ -49,27 +53,51 @@ function hover() {
 }
 
 function retryButton() {
-    const clearBtn = document.createElement("button");
-    clearBtn.classList.add("clear");
-    body.append(clearBtn);
-    clearBtn.textContent = "Clear";
+    const retryBtn = document.createElement("button");
+    retryBtn.textContent = "Custom Grid";
+    retryBtn.classList.add("retryBtn");
+    button4.append(retryBtn);
 
-    clearBtn.addEventListener("click", e => {
+    retryBtn.addEventListener("click", e => {
         restart();
     })
-
 }
 
-retryButton();
+function clearButton() {
+    const clearBtn = document.createElement("button");
+    clearBtn.textContent = "Clear";
+    clearBtn.classList.add("clearBtn");
+    button1.append(clearBtn);
+
+    clearBtn.addEventListener("click", e => {
+        clear();
+    })
+}
+
+function eraserBtn() {
+    const eraserBtn = document.createElement("button");
+    eraserBtn.textContent = "Eraser";
+    eraserBtn.classList.add("eraserBtn");
+    button2.append(eraserBtn);
+}
+
+function colorBtn() {
+    const colorBtn = document.createElement("button");
+    colorBtn.textContent = "Color";
+    colorBtn.classList.add("colorBtn");
+    button3.append(colorBtn);
+}
+
 checkUserInput();
 hover();
-
-
-
+clearButton();
+retryButton();
+eraserBtn();
+colorBtn()
 
 function restart() {
-    let grid = document.querySelectorAll(".classOfEachRow");
-    let br = document.querySelectorAll("br");
+    const grid = document.querySelectorAll(".classOfEachRow");
+    const br = document.querySelectorAll("br");
     for (let removeGrid of grid) {
         removeGrid.remove();
         for (let removeBr of br) {
@@ -79,6 +107,21 @@ function restart() {
     rowSize = 0;
     columnSize = 0;
     checkUserInput();
+    hover();
+}
+
+function clear() {
+
+    const grid = document.querySelectorAll(".classOfEachRow");
+    const br = document.querySelectorAll("br");
+
+    for (let removeGrid of grid) {
+        removeGrid.remove();
+        for (let removeBr of br) {
+            removeBr.remove();
+        }
+    }
+    column();
     hover();
 }
 

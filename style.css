@@ -1,39 +1,76 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* background-color: rgb(7, 21, 43); */
+    background-color: rgb(2, 3, 17);
+
 }
 
 .main {
-    /* background-color: rgb(52, 59, 65); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    /*  to remove whitespace of child */
+    font-size: 0px;
+    background-color: rgb(210, 224, 223);
+    border-radius: 10px;
+    border: 5px solid rgb(224, 201, 169);
+    margin: 10px;
 }
 
 h1 {
-    margin: 0;
-    color: rgb(170, 142, 107);
+    color: rgb(224, 201, 169);
+    text-align: center;
+    font-size: 3rem;
 }
 
 .classOfEachRow {
-    border: 1px solid rgb(24, 105, 92);
-    border-top: 1px solid rgb(233, 184, 195);
-    height: 35px;
-    width: 35px;
-    margin: 5px;
+    /* border: 0.1px solid rgb(24, 105, 92); */
+    height: 5px;
+    width: 5px;
     display: inline-block;
 }
 
 .clicked {
-    background-color: aquamarine;
+    background-color: rgb(0, 0, 0);
 }
 
-.clear {
-    width: 120px;
+button {
+    width: 220px;
     height: 40px;
-    border: 1px solid rgb(24, 105, 92);
-    background-color: rgb(74, 177, 142);
-    color: antiquewhite;
-    border-radius: 10px;
+    background-color: rgb(210, 224, 223);
+    color: rgb(12, 0, 0);
     font-size: x-large;
     text-align: center;
+    border-radius: 10px;
+    border: 3px solid rgb(241, 193, 129);
 }
+
+.button1,
+.button4 {
+    display: flex;
+    justify-content: center;
+}
+
+/* .retryBtn {
+    width: 220px;
+    height: 40px;
+    background-color: rgb(210, 224, 223);
+    color: rgb(12, 0, 0);
+    font-size: x-large;
+    text-align: center;
+    border-radius: 10px;
+    border: 3px solid rgb(241, 193, 129);
+}
+
+.clearBtn {
+    width: 220px;
+    height: 40px;
+    background-color: rgb(210, 224, 223);
+    color: rgb(0, 0, 0);
+    font-size: x-large;
+    text-align: center;
+    text-align: center;
+    border-radius: 10px;
+    border: 3px solid rgb(241, 193, 129);
+} */
