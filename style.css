@@ -1,6 +1,9 @@
 body {
-    background-color: rgb(2, 3, 17);
-
+    background-color: #d6e2cf;
+    /* border: 5px solid rgb(252, 248, 243); */
+    border-radius: 20px;
+    padding-bottom: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .main {
@@ -12,14 +15,15 @@ body {
 .content {
     /*  to remove whitespace of child */
     font-size: 0px;
-    background-color: rgb(210, 224, 223);
+    background-color: #152224;
     border-radius: 10px;
-    border: 5px solid rgb(224, 201, 169);
+    border: 5px solid #ebd48a;
     margin: 10px;
 }
 
 h1 {
-    color: rgb(224, 201, 169);
+    color: #354f52;
+    /* color: rgb(224, 201, 169); */
     text-align: center;
     font-size: 3rem;
 }
@@ -32,18 +36,7 @@ h1 {
 }
 
 .clicked {
-    background-color: rgb(0, 0, 0);
-}
-
-button {
-    width: 220px;
-    height: 40px;
-    background-color: rgb(210, 224, 223);
-    color: rgb(12, 0, 0);
-    font-size: x-large;
-    text-align: center;
-    border-radius: 10px;
-    border: 3px solid rgb(241, 193, 129);
+    background-color: #f0f8ff;
 }
 
 .button1,
@@ -52,25 +45,44 @@ button {
     justify-content: center;
 }
 
-/* .retryBtn {
-    width: 220px;
-    height: 40px;
-    background-color: rgb(210, 224, 223);
+/* .retryBtn,
+.clearBtn,
+.eraserBtn,
+.colorBtn { */
+button {
+    width: 100px;
+    height: 100px;
+    /* background-color: rgb(210, 224, 223); */
+    background-color: #f8f1db;
     color: rgb(12, 0, 0);
-    font-size: x-large;
+    font-size: larger;
+    font-style: italic;
     text-align: center;
-    border-radius: 10px;
-    border: 3px solid rgb(241, 193, 129);
+    border-radius: 50%;
+    border: 2px solid #152224;
 }
 
-.clearBtn {
-    width: 220px;
-    height: 40px;
-    background-color: rgb(210, 224, 223);
-    color: rgb(0, 0, 0);
-    font-size: x-large;
-    text-align: center;
-    text-align: center;
-    border-radius: 10px;
-    border: 3px solid rgb(241, 193, 129);
+/* button:hover {
+    width: 120px;
+    height: 120px;
 } */
+
+.colorPickerBtn {
+    background-color: #f8f1db;
+    border: none;
+    padding: 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    /* border-style: none; */
+}
+
+.color {
+    width: 34px;
+    height: 33px;
+    border-radius: 50%;
+}
+
+.nice {
+    background-color: red;
+}

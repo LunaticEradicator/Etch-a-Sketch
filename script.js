@@ -4,8 +4,8 @@ const button2 = document.querySelector(".button2");
 const button3 = document.querySelector(".button3");
 const button4 = document.querySelector(".button4");
 
-let rowSize = 100;
-let columnSize = 100;
+let rowSize = 70;
+let columnSize = 70;
 
 
 function row() {
@@ -25,7 +25,7 @@ function column() {
 }
 
 function checkUserInput() {
-    if (rowSize !== 100 && columnSize !== 100) {
+    if (rowSize !== 70 && columnSize !== 70) {
         rowSize = prompt(` Enter the Grid ROW value Below "100" `);
         while (rowSize === "") {
             rowSize = prompt("Enter Row Grid Again (Below 100)");
@@ -41,7 +41,6 @@ function checkUserInput() {
         column();
     }
 }
-
 
 function hover() {
     let grid = document.querySelectorAll(".classOfEachRow");
@@ -79,13 +78,25 @@ function eraserBtn() {
     eraserBtn.textContent = "Eraser";
     eraserBtn.classList.add("eraserBtn");
     button2.append(eraserBtn);
+    eraserBtn.addEventListener("click", e => {
+        erase();
+    })
 }
 
 function colorBtn() {
     const colorBtn = document.createElement("button");
-    colorBtn.textContent = "Color";
     colorBtn.classList.add("colorBtn");
     button3.append(colorBtn);
+
+    const colorPickerBtn = document.createElement("input");
+    colorPickerBtn.classList.add("colorPickerBtn");
+    colorPickerBtn.setAttribute("type", "color");
+    colorPickerBtn.setAttribute("value", "#f0f8ff");
+    colorBtn.append(colorPickerBtn);
+
+    colorBtn.addEventListener("mouseleave", e => {
+        color();
+    })
 }
 
 checkUserInput();
@@ -115,16 +126,37 @@ function clear() {
     const grid = document.querySelectorAll(".classOfEachRow");
     const br = document.querySelectorAll("br");
 
-    for (let removeGrid of grid) {
-        removeGrid.remove();
+    for (let clearGrid of grid) {
+        clearGrid.remove();
         for (let removeBr of br) {
             removeBr.remove();
         }
     }
     column();
     hover();
+    color();
 }
 
+function erase() {
+    let grid = document.querySelectorAll(".classOfEachRow");
+    const colorPicker = document.querySelector(".colorPickerBtn");
 
+    for (let eachGrid of grid) {
+        eachGrid.addEventListener("mouseenter", e => {
+            // e.target.classList.remove("clicked");
+            e.target.style.backgroundColor = "#152224";
+        })
+    }
 
+}
 
+function color() {
+    const colorPicker = document.querySelector(".colorPickerBtn");
+    let grid = document.querySelectorAll(".classOfEachRow");
+
+    for (let eachGrid of grid) {
+        eachGrid.addEventListener("mouseenter", e => {
+            e.target.style.backgroundColor = colorPicker.value;
+        })
+    }
+}
