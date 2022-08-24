@@ -3,6 +3,7 @@ const button1 = document.querySelector(".button1");
 const button2 = document.querySelector(".button2");
 const button3 = document.querySelector(".button3");
 const button4 = document.querySelector(".button4");
+const button5 = document.querySelector(".button5");
 
 let rowSize = 70;
 let columnSize = 70;
@@ -55,7 +56,7 @@ function retryButton() {
     const retryBtn = document.createElement("button");
     retryBtn.textContent = "Custom Grid";
     retryBtn.classList.add("retryBtn");
-    button4.append(retryBtn);
+    button5.append(retryBtn);
 
     retryBtn.addEventListener("click", e => {
         restart();
@@ -99,16 +100,31 @@ function colorBtn() {
     })
 }
 
+function randomRgbBtn() {
+    const rgbButton = document.createElement("button");
+    rgbButton.textContent = "RGB Mode";
+    rgbButton.classList.add("rgbButton");
+    button4.append(rgbButton);
+
+    rgbButton.addEventListener("click", e => {
+        console.log("pressed");
+        randomRgb();
+    })
+
+}
+
 checkUserInput();
 hover();
 clearButton();
 retryButton();
 eraserBtn();
-colorBtn()
+colorBtn();
+randomRgbBtn();
 
 function restart() {
     const grid = document.querySelectorAll(".classOfEachRow");
     const br = document.querySelectorAll("br");
+
     for (let removeGrid of grid) {
         removeGrid.remove();
         for (let removeBr of br) {
@@ -139,12 +155,11 @@ function clear() {
 
 function erase() {
     let grid = document.querySelectorAll(".classOfEachRow");
-    const colorPicker = document.querySelector(".colorPickerBtn");
 
     for (let eachGrid of grid) {
         eachGrid.addEventListener("mouseenter", e => {
-            // e.target.classList.remove("clicked");
             e.target.style.backgroundColor = "#152224";
+            // e.target.classList.remove("clicked");
         })
     }
 
@@ -159,4 +174,18 @@ function color() {
             e.target.style.backgroundColor = colorPicker.value;
         })
     }
+}
+
+function randomRgb() {
+    let grid = document.querySelectorAll(".classOfEachRow");
+    for (let grids of grid) {
+        grids.addEventListener("mouseenter", e => {
+            e.target.style.backgroundColor = "#" + randomColor();
+        })
+    }
+}
+
+function randomColor() {
+    const rand = Math.floor(Math.random() * 16777215).toString(16);
+    return rand;
 }

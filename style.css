@@ -1,8 +1,8 @@
 body {
     background-color: #d6e2cf;
-    /* border: 5px solid rgb(252, 248, 243); */
-    border-radius: 20px;
     padding-bottom: 20px;
+    border-bottom: 5px solid #152224;
+    border-radius: 50%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -12,20 +12,77 @@ body {
     align-items: center;
 }
 
+.outerStyle {
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: space-around;
+}
+
+.innerStyle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .imgOne {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 10px 1px 17px #000000;
+    box-shadow: 10px 3px 1px #000000;
+}
+
+.imgTwo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: -10px 3px 1px #000000;
+    box-shadow: 10px 1px 17px #000000;
+} */
+
+img {
+    width: 100px;
+    height: 100px;
+    box-shadow: 10px 1px 17px #000000;
+    border-radius: 50%;
+}
+
+img:hover {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 10px 1px 17px #000000;
+}
+
 .content {
     /*  to remove whitespace of child */
     font-size: 0px;
     background-color: #152224;
     border-radius: 10px;
-    border: 5px solid #ebd48a;
+    border: 3.5px solid #ebd48a;
     margin: 10px;
+    box-shadow: 1px -1px 17px #ebd48a;
+    margin-bottom: 50px;
 }
 
 h1 {
     color: #354f52;
-    /* color: rgb(224, 201, 169); */
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
+    margin-left: 65px;
+}
+
+.A {
+    color: #354f52;
+    transform: scale(1, -1);
+    font-size: 5rem;
+    margin-top: -90px;
+    margin-right: 5px;
+    /* color: #b3e59f; */
+
+    /* box-shadow: 0px 0px 1px #313336; */
+    /* border-radius: 10%; */
 }
 
 .classOfEachRow {
@@ -40,32 +97,49 @@ h1 {
 }
 
 .button1,
-.button4 {
+.button5 {
     display: flex;
     justify-content: center;
 }
 
-/* .retryBtn,
-.clearBtn,
-.eraserBtn,
-.colorBtn { */
 button {
-    width: 100px;
-    height: 100px;
     /* background-color: rgb(210, 224, 223); */
+    height: 100px;
+    width: 100px;
     background-color: #f8f1db;
-    color: rgb(12, 0, 0);
+    color: #152224;
     font-size: larger;
     font-style: italic;
     text-align: center;
     border-radius: 50%;
-    border: 2px solid #152224;
+    border: none;
+    border: 1px solid #1c7c54;
+    transition: background-color .25s;
 }
 
-/* button:hover {
-    width: 120px;
-    height: 120px;
-} */
+button:hover {
+    background-color: #152224;
+    color: #f8f1db;
+    opacity: 90%;
+}
+
+button:active {
+    box-shadow: 1px 1px 10px #00ffd5;
+    /* background-color: #f8f1db;
+    color: #152224; */
+    font-size: x-large;
+}
+
+.innerButton {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.button2,
+.button4 {
+    margin-top: 20px;
+}
 
 .colorPickerBtn {
     background-color: #f8f1db;
@@ -74,7 +148,14 @@ button {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    /* border-style: none; */
+}
+
+.rgbButtonInput {
+    border: none;
+    padding: 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
 }
 
 .color {
