@@ -4,10 +4,10 @@ const button2 = document.querySelector(".button2");
 const button3 = document.querySelector(".button3");
 const button4 = document.querySelector(".button4");
 const button5 = document.querySelector(".button5");
+const range = document.querySelector(".range");
 
-let rowSize = 70;
-let columnSize = 70;
-
+let rowSize = range.value;
+let columnSize = range.value;
 
 function row() {
     for (let j = 0; j < rowSize; j++) {
@@ -25,25 +25,7 @@ function column() {
     }
 }
 
-function checkUserInput() {
-    if (rowSize !== 70 && columnSize !== 70) {
-        rowSize = prompt(` Enter the Grid ROW value Below "100" `);
-        while (rowSize === "") {
-            rowSize = prompt("Enter Row Grid Again (Below 100)");
-        }
-        columnSize = prompt(` Enter the Grid COLUMN value Below "100" `);
-
-        while (columnSize === "") {
-            columnSize = prompt("Enter Column Grid Again (Below 100)");
-        }
-        column();
-    }
-    else {
-        column();
-    }
-}
-
-function hover() {
+function hoverEffect() {
     let grid = document.querySelectorAll(".classOfEachRow");
     for (let eachGrid of grid) {
         eachGrid.addEventListener("mouseenter", e => {
@@ -52,18 +34,29 @@ function hover() {
     }
 }
 
-function retryButton() {
-    const retryBtn = document.createElement("button");
-    retryBtn.textContent = "Custom Grid";
-    retryBtn.classList.add("retryBtn");
-    button5.append(retryBtn);
-
-    retryBtn.addEventListener("click", e => {
-        restart();
+function CustomGrid() {
+    const range = document.querySelector(".range");
+    range.addEventListener("click", e => {
+        reset();
+        updateScore();
     })
 }
 
-function clearButton() {
+function updateScore() {
+    const newScore = document.querySelector(".resetBtn");
+    newScore.textContent = `Grid:${rowSize}X${columnSize}`;
+    newScore.append(range);
+}
+
+function CustomGridBtn() {
+    const resetBtn = document.createElement("button");
+    resetBtn.textContent = `Grid:${rowSize}X${columnSize}`;
+    resetBtn.classList.add("resetBtn");
+    button5.append(resetBtn);
+    resetBtn.append(range);
+}
+
+function clearBtn() {
     const clearBtn = document.createElement("button");
     clearBtn.textContent = "Clear";
     clearBtn.classList.add("clearBtn");
@@ -113,15 +106,16 @@ function randomRgbBtn() {
 
 }
 
-checkUserInput();
-hover();
-clearButton();
-retryButton();
+column();
+CustomGridBtn();
+hoverEffect();
+clearBtn();
 eraserBtn();
 colorBtn();
 randomRgbBtn();
+CustomGrid();
 
-function restart() {
+function reset() {
     const grid = document.querySelectorAll(".classOfEachRow");
     const br = document.querySelectorAll("br");
 
@@ -133,8 +127,13 @@ function restart() {
     }
     rowSize = 0;
     columnSize = 0;
-    checkUserInput();
-    hover();
+    rowSize = range.value;
+    columnSize = range.value;
+    column();
+    hoverEffect();
+
+    console.log(`This is the Row Size   : ${rowSize}`);
+    console.log(`This is the column Size: ${columnSize}`);
 }
 
 function clear() {
@@ -149,7 +148,7 @@ function clear() {
         }
     }
     column();
-    hover();
+    hoverEffect();
     color();
 }
 
@@ -189,3 +188,20 @@ function randomColor() {
     const rand = Math.floor(Math.random() * 16777215).toString(16);
     return rand;
 }
+// function checkUserInput() {
+//     if (rowSize !== 70 && columnSize !== 70) {
+//         rowSize = prompt(` Enter the Grid ROW value Below "100" `);
+//         while (rowSize === "") {
+//             rowSize = prompt("Enter Row Grid Again (Below 100)");
+//         }
+//         columnSize = prompt(` Enter the Grid COLUMN value Below "100" `);
+
+//         while (columnSize === "") {
+//             columnSize = prompt("Enter Column Grid Again (Below 100)");
+//         }
+//         column();
+//     }
+//     else {
+//         column();
+//     }
+// }
