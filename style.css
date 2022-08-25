@@ -8,6 +8,7 @@ body {
 
 .main {
     display: flex;
+    /* flex-direction: row; */
     justify-content: center;
     align-items: center;
 }
@@ -41,13 +42,17 @@ img:hover {
 
 .content {
     /*  to remove whitespace of child */
+    width: 400px;
+    height: 400px;
     font-size: 0px;
     background-color: #152224;
-    border-radius: 10px;
+    /* border-radius: 20px; */
+    border-top: 0px solid #ebd48a;
     border: 3.5px solid #ebd48a;
     margin: 10px;
     box-shadow: 1px -1px 17px #ebd48a;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    display: grid;
 }
 
 h1 {
@@ -61,25 +66,31 @@ h1 {
     color: #354f52;
     transform: scale(1, -1);
     font-size: 5rem;
-    margin-top: -90px;
-    margin-right: 5px;
+    margin-top: -70px;
+    margin-left: 12px;
 }
 
 .classOfEachRow {
-    /* border: 0.1px solid rgb(24, 105, 92); */
-    height: 5px;
-    width: 5px;
-    display: inline-block;
+    /* border: 1px solid rgb(24, 105, 92); */
+    background-color: #152224;
 }
 
 .clicked {
     background-color: #f0f8ff;
 }
 
-.button1,
-.button5 {
+/* .button1 {
     display: flex;
     justify-content: center;
+} */
+
+.topStyle {
+    display: flex;
+    justify-content: center;
+}
+
+.button5 {
+    padding-right: 20px;
 }
 
 button {
@@ -100,13 +111,18 @@ button {
 button:hover {
     background-color: #152224;
     color: #f8f1db;
-    opacity: 90%;
+    opacity: 70%;
+    cursor: pointer;
 }
 
 button:active {
     box-shadow: 1px 1px 10px #00ffd5;
     font-size: larger;
-    opacity: 50%;
+    opacity: 1;
+}
+
+.resetBtn:active {
+    font-size: medium !important;
 }
 
 .innerButton {
@@ -146,13 +162,34 @@ button:active {
     background-color: red;
 }
 
-.button5 {
+/* 
+.resetBtn {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-}
+    justify-content: center;
+} */
 
 .range {
+    appearance: none;
     width: 90px;
-    /* appearance: none; */
+    height: 12px;
+    cursor: pointer;
+    border: 3px solid #ebd48a;
+    background-color: #152224;
+    border-radius: 10px;
+    margin-top: 4.5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    height: 11px;
+    width: 9px;
+    border: 1px solid #ebd48a;
+    border-radius: 30%;
+    background: rgb(255, 255, 255);
+}
+
+.gridToggle {
+    border: 1px solid rgb(24, 105, 28);
 }
