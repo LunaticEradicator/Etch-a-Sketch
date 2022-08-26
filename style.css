@@ -18,6 +18,7 @@ body {
     /* flex-direction: row; */
     align-items: center;
     justify-content: space-around;
+    /* margin-bottom: 10px; */
 }
 
 .innerStyle {
@@ -42,8 +43,8 @@ img:hover {
 
 .content {
     /*  to remove whitespace of child */
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     font-size: 0px;
     background-color: #152224;
     /* border-radius: 20px; */
@@ -51,14 +52,14 @@ img:hover {
     border: 3.5px solid #ebd48a;
     margin: 10px;
     box-shadow: 1px -1px 17px #ebd48a;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
     display: grid;
 }
 
 h1 {
     color: #354f52;
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
     margin-left: 65px;
 }
 
@@ -95,8 +96,8 @@ h1 {
 
 button {
     /* background-color: rgb(210, 224, 223); */
-    height: 110px;
-    width: 110px;
+    height: 120px;
+    width: 120px;
     background-color: #f8f1db;
     color: #152224;
     font-size: medium;
