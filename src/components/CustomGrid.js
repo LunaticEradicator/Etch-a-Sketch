@@ -5,22 +5,24 @@
 import HoverEffect from "./HoverEffect";
 import CreateGrid from "./CreateGrid";
 
-const gridRangeSelector = document.querySelector(".range");
+const gridRangeSelector = document.querySelector(
+  ".grid__custom__button__range"
+);
 let rowSize = gridRangeSelector.value;
 let columnSize = gridRangeSelector.value;
 
 export default function CustomGrid() {
-  const customGridDiv = document.querySelector(".button5");
+  const customGridDiv = document.querySelector(".grid__custom");
 
   function customGridReset() {
-    const grid = document.querySelectorAll(".classOfEachRow");
-    const br = document.querySelectorAll("br");
+    const grid = document.querySelectorAll(".main__grid__row");
+    // const br = document.querySelectorAll("br");
 
     for (const removeGrid of grid) {
       removeGrid.remove();
-      for (const removeBr of br) {
-        removeBr.remove();
-      }
+      // for (const removeBr of br) {
+      // removeBr.remove();
+      // }
     }
 
     rowSize = 0;
@@ -35,15 +37,15 @@ export default function CustomGrid() {
   }
 
   function customGridUpdate() {
-    const newScore = document.querySelector(".resetBtn");
-    newScore.textContent = `Grid: ${rowSize} x ${columnSize}`;
+    const newScore = document.querySelector(".grid__custom__button");
+    newScore.textContent = `${rowSize} x ${columnSize}`;
     newScore.append(gridRangeSelector);
   }
 
   function customGrid() {
     const resetBtn = document.createElement("button");
-    resetBtn.textContent = `Grid: ${rowSize} x ${columnSize}`;
-    resetBtn.classList.add("resetBtn");
+    resetBtn.textContent = `${rowSize} x ${columnSize}`;
+    resetBtn.classList.add("grid__custom__button");
     customGridDiv.append(resetBtn);
     resetBtn.append(gridRangeSelector);
 

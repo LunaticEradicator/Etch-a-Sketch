@@ -6,17 +6,17 @@ import CreateGrid from "./CreateGrid";
 import HoverEffect from "./HoverEffect";
 
 export default function ClearColor() {
-  const clearColorDiv = document.querySelector(".button1");
+  const clearColorDiv = document.querySelector(".main__allButton__clear");
 
   function clearColorFnc() {
-    const grid = document.querySelectorAll(".classOfEachRow");
-    const br = document.querySelectorAll("br");
+    const grid = document.querySelectorAll(".main__grid__row");
+    // const br = document.querySelectorAll("br");
 
     for (const clearGrid of grid) {
       clearGrid.remove();
-      for (const removeBr of br) {
-        removeBr.remove();
-      }
+      // for (const removeBr of br) {
+      //   removeBr.remove();
+      // }
     }
     CreateGrid();
     HoverEffect();
@@ -25,7 +25,7 @@ export default function ClearColor() {
   function clearColor() {
     const clearBtn = document.createElement("button");
     clearBtn.textContent = "Clear";
-    clearBtn.classList.add("clearBtn");
+    clearBtn.classList.add("main__allButton__clear__button");
     clearColorDiv.append(clearBtn);
 
     clearBtn.addEventListener("click", clearColorFnc);

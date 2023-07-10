@@ -1,196 +1,57 @@
-body {
-    background-color: #d6e2cf;
-    padding-bottom: 20px;
-    border-bottom: 5px solid #152224;
-    border-radius: 50%;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+@forward "global";
+@forward "components";
+@forward "util";
 
-.main {
-    display: flex;
-    /* flex-direction: row; */
-    justify-content: center;
-    align-items: center;
-}
-
-.outerStyle {
-    display: flex;
-    /* flex-direction: row; */
-    align-items: center;
-    justify-content: space-around;
-    /* margin-bottom: 10px; */
-}
-
-.innerStyle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-img {
-    width: 100px;
-    height: 100px;
-    box-shadow: 10px 1px 17px #000000;
-    border-radius: 50%;
-}
-
-img:hover {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    box-shadow: 10px 1px 17px #000000;
-}
-
-.content {
-    /*  to remove whitespace of child */
-    width: 500px;
-    height: 500px;
-    font-size: 0px;
-    background-color: #152224;
-    /* border-radius: 20px; */
-    border-top: 0px solid #ebd48a;
-    border: 3.5px solid #ebd48a;
-    margin: 10px;
-    box-shadow: 1px -1px 17px #ebd48a;
-    margin-bottom: 50px;
-    display: grid;
-}
-
-h1 {
-    color: #354f52;
-    text-align: center;
-    font-size: 4rem;
-    margin-left: 65px;
-}
-
-.A {
-    color: #354f52;
-    transform: scale(1, -1);
-    font-size: 5rem;
-    margin-top: -70px;
-    margin-left: 12px;
-}
-
-.classOfEachRow {
-    /* border: 1px solid rgb(24, 105, 92); */
-    background-color: #152224;
-}
-
-.clicked {
-    background-color: #f0f8ff;
-}
-
-/* .button1 {
-    display: flex;
-    justify-content: center;
-} */
-
-.topStyle {
-    display: flex;
-    justify-content: center;
-}
-
-.button5 {
-    padding-right: 20px;
-}
+@use "./util/" as ut;
 
 button {
-    /* background-color: rgb(210, 224, 223); */
-    height: 120px;
-    width: 120px;
-    background-color: #f8f1db;
-    color: #152224;
-    font-size: medium;
-    font-style: italic;
-    text-align: center;
-    border-radius: 50%;
-    border: none;
-    border: 1px solid #1c7c54;
-    transition: background-color .25s;
-}
+  height: 150px;
+  width: 150px;
+  background-color: #f8f1db;
+  color: #152224;
+  font-size: medium;
+  font-style: italic;
+  text-align: center;
+  border-radius: 50%;
+  border: none;
+  border: 1px solid #1c7c54;
+  transition: background-color 0.25s;
+  font-size: 1.3rem;
 
-button:hover {
+  &:hover {
     background-color: #152224;
     color: #f8f1db;
     opacity: 70%;
     cursor: pointer;
-}
-
-button:active {
+  }
+  &:active {
     box-shadow: 1px 1px 10px #00ffd5;
     font-size: larger;
     opacity: 1;
-}
+  }
 
-.resetBtn:active {
-    font-size: medium !important;
-}
-
-.innerButton {
-    display: flex;
-    flex-direction: column;
-}
-
-.button2,
-.button4 {
-    margin-top: 20px;
-}
-
-.colorPickerBtn {
-    background-color: #f8f1db;
-    border: none;
-    padding: 0;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-}
-
-.rgbButtonInput {
-    border: none;
-    padding: 0;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-}
-
-.color {
-    width: 34px;
-    height: 33px;
-    border-radius: 50%;
-}
-
-.nice {
-    background-color: red;
-}
-
-/* 
-.resetBtn {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-} */
-
-.range {
-    appearance: none;
-    width: 90px;
-    height: 12px;
-    cursor: pointer;
-    border: 3px solid #ebd48a;
-    background-color: #152224;
-    border-radius: 10px;
-    margin-top: 4.5px;
+  @include ut.breakpoint(xLarge) {
+    width: 140px;
+    height: 140px;
+    font-size: 1.2rem;
+  }
+  @include ut.breakpoint(large) {
+    width: 130px;
+    height: 130px;
+    font-size: 1.2rem;
+  }
+  @include ut.breakpoint(medium) {
+    width: 65px;
+    height: 65px;
+    font-size: 1rem;
+  }
 }
 
 input[type="range"]::-webkit-slider-thumb {
-    appearance: none;
-    height: 11px;
-    width: 9px;
-    border: 1px solid #ebd48a;
-    border-radius: 30%;
-    background: rgb(255, 255, 255);
-}
-
-.gridToggle {
-    border: 1px solid rgb(24, 105, 28);
+  appearance: none;
+  height: 11px;
+  width: 9px;
+  border: 1px solid #ebd48a;
+  border-radius: 30%;
+  background: rgb(255, 255, 255);
 }

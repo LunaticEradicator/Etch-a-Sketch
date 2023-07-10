@@ -14,11 +14,11 @@ import RGBColor from "./components/RGBColor";
 function runEtchASketch() {
   CustomGrid();
   ClearColor();
-  ColorPicker();
   HoverEffect();
   ToggleGrid();
   EraseColor();
   RGBColor();
+  ColorPicker();
 }
 
 runEtchASketch();

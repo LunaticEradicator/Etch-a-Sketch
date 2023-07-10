@@ -3,7 +3,7 @@
 import { columnSize, rowSize } from "./CustomGrid";
 
 export default function CreateGrid() {
-  const content = document.querySelector(".content");
+  const content = document.querySelector(".main__grid");
 
   // create the first row [rowSize]
   function createRows() {
@@ -11,7 +11,7 @@ export default function CreateGrid() {
       const singleRow = document.createElement("div");
       content.style.gridTemplateColumns = `repeat(${columnSize}, 1fr)`;
       content.style.gridTemplateRows = `repeat(${rowSize}, 1fr)`;
-      singleRow.classList.add("classOfEachRow");
+      singleRow.classList.add("main__grid__row");
       content.append(singleRow);
     }
   }

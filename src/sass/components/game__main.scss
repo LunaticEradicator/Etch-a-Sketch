@@ -1,0 +1,92 @@
+@use "../util/" as ut;
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-bottom: 50px;
+  border-bottom: 5px solid #152224;
+  border-radius: 50%;
+
+  &__allButton {
+    &__erase {
+      margin-top: 20px;
+    }
+  }
+
+  @include ut.breakpoint(xLarge) {
+    padding-bottom: 40px;
+    border-bottom: 5px solid #152224;
+    border-radius: 49%;
+  }
+  @include ut.breakpoint(large) {
+    padding-bottom: 30px;
+    border-bottom: 5px solid #152224;
+    border-radius: 48%;
+  }
+  @include ut.breakpoint(medium) {
+    padding-bottom: 20px;
+    border-bottom: 5px solid #152224;
+    border-radius: 47%;
+  }
+}
+
+.main__grid {
+  width: 500px;
+  height: 500px;
+  font-size: 0px;
+  background-color: #152224;
+  border-top: 0px solid #ebd48a;
+  border: 3.5px solid #ebd48a;
+  margin: 10px;
+  box-shadow: 1px -1px 17px #ebd48a;
+  margin-bottom: 50px;
+  display: grid;
+
+  @include ut.breakpoint(xLarge) {
+    width: 400px;
+    height: 400px;
+  }
+  @include ut.breakpoint(large) {
+    width: 300px;
+    height: 300px;
+  }
+  @include ut.breakpoint(medium) {
+    width: 250px;
+    height: 180px;
+  }
+  &__row {
+    background-color: #152224;
+  }
+}
+
+.main__button {
+  &__rgbColor {
+    margin-top: 20px;
+  }
+  &__colorPicker__button__size {
+    background-color: #f8f1db;
+    border: none;
+    padding: 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    @include ut.breakpoint(xLarge) {
+      width: 60px;
+      height: 60px;
+    }
+    @include ut.breakpoint(large) {
+      width: 50px;
+      height: 50px;
+    }
+    @include ut.breakpoint(medium) {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+.defaultHoverColor {
+  background-color: #f0f8ff;
+}

@@ -1,0 +1,23 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #d6e2cf;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+h1 {
+  color: #354f52;
+  text-align: center;
+  font-size: 4rem;
+  margin-left: 65px;
+}

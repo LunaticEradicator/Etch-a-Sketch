@@ -1,0 +1,55 @@
+@use "../util/" as ut;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  &__icon {
+    width: 100px;
+    height: 100px;
+    box-shadow: 10px 1px 17px #000000;
+    border-radius: 50%;
+    transition: 0.6s all;
+    &:hover {
+      transform: scale(1.1);
+      border-radius: 50%;
+      box-shadow: 10px 1px 17px #000000;
+    }
+    @include ut.breakpoint(xLarge) {
+      width: 80px;
+      height: 80px;
+    }
+    @include ut.breakpoint(large) {
+      width: 60px;
+      height: 60px;
+    }
+    @include ut.breakpoint(medium) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  &__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    position: relative;
+    &__two {
+      color: #354f52;
+      position: absolute;
+      top: 50%;
+      left: 38%;
+      // transform: scale(1, -1);
+    }
+    @include ut.breakpoint(xLarge) {
+      font-size: 4rem;
+    }
+    @include ut.breakpoint(large) {
+      font-size: 3rem;
+    }
+    @include ut.breakpoint(medium) {
+      font-size: 2rem;
+    }
+  }
+}
